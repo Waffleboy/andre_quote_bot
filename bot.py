@@ -32,8 +32,16 @@ def error(bot, update, error):
 def start(bot, update):
     update.message.reply_text("""
     Hi, I'm Andrebot! I'm a collection of epic Andre quotes to be preserved foreverrrrrr
-    
-Type /help to see existing commands.
+
+Use /add <quote> to add a new epic Andre quote
+
+Use /view to view a list of existing quotes
+
+Use /get <number> to get a specific Andre quote
+
+Use /random to get a randomly selected epic Andre quote!
+
+Type /help to see these commands again.
 """)
 
 def add_new_quote(bot,update):
