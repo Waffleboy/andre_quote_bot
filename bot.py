@@ -35,7 +35,7 @@ def start(bot, update):
 
 Use /add <quote> to add a new epic Andre quote
 
-Use /view to view a list of existing quotes
+Use /viewall to view a list of existing quotes
 
 Use /get <number> to get a specific Andre quote
 
@@ -97,7 +97,7 @@ def getHelpText():
     
 Use /add <quote> to add a new epic Andre quote
 
-Use /view to view a list of existing quotes
+Use /viewall to view a list of existing quotes
 
 Use /get <number> to get a specific Andre quote
 
@@ -115,16 +115,6 @@ For further help, contact @waffleboy
 def standardReply():
     s = "At the moment, I only reply to slash commands. Please try /help for more information!"
     return s
-
-# Heroku bypass - not generally needed
-def listenToPort():
-    global app
-    logger.info("Beginning Flask server to prevent shutdown by Heroku")
-    app.run(debug=False,host = '0.0.0.0',port= int(os.environ.get('PORT', 33507)))
-
-@app.route('/')
-def standardPageOnHeroku():
-    return "Andre Bot is now awake!"
 
 def isProductionEnvironment():
     if os.environ.get('PRODUCTION'):
