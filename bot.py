@@ -125,7 +125,7 @@ def isProductionEnvironment():
     
 def getUpdater():
     if isProductionEnvironment():
-        logger.info("Using Production key %s",os.environ.get("TELEGRAM_ANDREBOT_TOKEN"))
+        logger.info("Using Production key")
         return Updater(os.environ.get("TELEGRAM_ANDREBOT_TOKEN"))
     return Updater(os.environ.get("TELEGRAM_ANDREBOT_TEST_TOKEN"))
 
