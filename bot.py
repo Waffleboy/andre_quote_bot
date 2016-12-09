@@ -48,7 +48,7 @@ def add_new_quote(bot,update):
     username = update.message.from_user.username
     logger.info("Received a add_new_quote request from {}".format(username))
     update.message.reply_text("Thanks {}! Adding your quote to the Andre database..".format(username))
-    if update.message.text == '':
+    if update.message.text == '/add ':
         update.message.reply_text("This isn't the helen keller bot")
         return
     quote_id = dbWrapper.add_new_quote(update)
